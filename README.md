@@ -60,3 +60,5 @@
 ## 片付け
 
 PoC 確認後、リポは削除してよい(`gh repo delete hina-kura49/ci-pi-poc`)。承認した PoC PR は自分のリポ内なので影響なし。
+
+<!-- poc change -->
