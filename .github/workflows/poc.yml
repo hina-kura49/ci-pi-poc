@@ -71,3 +71,12 @@ jobs:
             3. Post exactly ONE comment mentioning the reviewer.
 
             **Start the assignment process now.**
+
+      - name: Dump agent execution output (PoC debugging)
+        if: always()
+        run: |
+          echo "=== claude-execution-output.json ==="
+          cat "${{ runner.temp }}/claude-execution-output.json" 2>/dev/null || echo "(not found at runner.temp)"
+          echo
+          echo "=== any execution json on runner ==="
+          find "${{ runner.temp }}" /home/runner/work/_temp -maxdepth 3 -name 'claude-execution-output.json' 2>/dev/null | while read -r f; do echo "--- $f ---"; cat "$f"; done
